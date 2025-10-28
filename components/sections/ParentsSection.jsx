@@ -1,7 +1,7 @@
 // 👨‍👩‍👧‍👦 ParentsSection - Sección de información de padres
 
 import React, {useState, useEffect, useRef, useCallback} from "react";
-//import Image from "next/image";
+import Image from "next/image";
 import { quinceMainData } from "@/components/sections/data/main-data";
 
 export default function ParentsSection() {
@@ -52,76 +52,96 @@ export default function ParentsSection() {
 
   // Función helper para clases de animación
   const getAnimationClass = (isVisible, animationType, delay = '') => {
-    const baseClass = 'animate-on-scroll';
+    const baseClass = '';
     const animClass = isVisible ? `animate-${animationType} ${delay}` : '';
     return `${baseClass} ${animClass}`.trim();
   };
   
-  const basicClass="font-main-text text-5xl text-indigo-500 mb-4";
-  const completeClass="font-main-text text-5xl text-indigo-500 mb-4 scale-up-center";
+  const basicClass="font-main-text text-5xl text-white mb-4";
+  const completeClass="font-main-text text-5xl text-white mb-4 scale-up-center";
   
 
   return (
     <section 
       ref={sectionRef}
-      style={{
+      /* style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${parents.backgroundImage}')`,
-        backgroundSize: 'cover',
+        backgroundSize: '100% 100%',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
-      }}
+      }} */
+     style={{
+      //background: "url('/images/texturaAzul01.jpeg')",
+      
+
+    }}
       id="parents" 
-      className={`py-20 bg-muted/30 ${isInView ? 'bg-parallax' : ''}`}
+      className={`pb-0 relative overflow-hidden`}
     >
-      {/* Elementos decorativos flotantes */}
-      <div className="decorative-element top-10 left-10 animate-float delay-200">
-        <span className="text-2xl heart-icon animate-sparkle delay-500">💖</span>
-      </div>
-      <div className="decorative-element top-20 right-16 animate-float delay-700">
-        <span className="text-xl star-icon animate-sparkle delay-300">✨</span>
-      </div>
-      <div className="decorative-element bottom-20 left-20 animate-float delay-1000">
-        <span className="text-xl heart-icon animate-sparkle delay-800">💝</span>
-      </div>
-      <div className="decorative-element bottom-16 right-10 animate-float delay-400">
-        <span className="text-2xl star-icon animate-sparkle delay-600">⭐</span>
-      </div>
+       
 
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             
-            <div className="relative p-6 rounded-2xl z-10 text-center space-y-8 py-12 text-white">
+            <div className="relative p-6 z-10 text-center space-y-8 py-12">
               
+              <div 
+              style={{
+                width:'200px'
+              }}
+              className="rounded-full mx-auto mb-4">
+              <Image
+                src="/images/marcoPaola03.png"
+                alt="Divider Floral"
+                width={200}
+                height={50}
+                className="object-cover rounded-full"
+              />
+              </div>
+
+              <div>
+                <Image
+                  src="/images/pao16.jpg"
+                  alt="Icono de Papás"
+                  width={200}
+                  height={300}
+                  className={isInView ? "scale-up-center mx-auto mb-4 rounded-full" : "mx-auto mb-4"}
+                />
+              </div>
+
               {/* Mensaje principal con animación */}
               <div className={getAnimationClass(messageVisible, 'fade-in-up', 'delay-200')}>
-                <p className="text-lg italic max-w-2xl mx-auto leading-relaxed text-glow">
+                <p className="text-lg italic max-w-2xl mx-auto text-blue-700 font-bold">
                   {parents.message}
                 </p>
               </div>
+              
+              
 
               <div className="space-y-8">
                 
                 {/* Card de Padres */}
-                <div className={`${getAnimationClass(parentsVisible, 'slide-in-left', 'delay-400')} parent-card`}>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+                <div className={`${getAnimationClass(parentsVisible, 'slide-in-left', 'delay-400')}`}>
+                  <div className="rounded-xl p-6 ">
                     <div className="flex items-center justify-center mb-4">
-                      <span className="text-3xl animate-heart-beat mr-2">👨‍👩‍👧</span>
+                      
                       <h3 className={parentsVisible ? completeClass : basicClass}>
                         Mis papás
                       </h3>
-                      <span className="text-3xl animate-heart-beat ml-2">👨‍👩‍👧</span>
+                      
                     </div>
-                    <div className="space-y-3">
+                    <div className="space-y-3 text-cyan-900">
                       <div className="flex items-center justify-center space-x-2">
-                        <span className="text-lg">👨</span>
-                        <p className="text-xl font-medium text-glow">
+                        
+                        <p className="text-xl font-medium">
                           {parents.father}
                         </p>
                       </div>
+                      <p>&</p>
                       <div className="flex items-center justify-center space-x-2">
-                        <span className="text-lg">👩</span>
+                        
                         <p className="text-xl font-medium text-glow">
                           {parents.mother}
                         </p>
@@ -130,33 +150,40 @@ export default function ParentsSection() {
                   </div>
                 </div>
 
+                <div className={getAnimationClass(messageVisible, 'fade-in-up', 'delay-200')}>
+                <p className="text-lg italic max-w-2xl mx-auto text-blue-700 font-bold">
+                  Y la Compañia de
+                </p>
+              </div>
                 {/* Card de Padrinos */}
-                <div className={`${getAnimationClass(godparentsVisible, 'slide-in-right', 'delay-600')} parent-card`}>
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300">
+                <div className={`${getAnimationClass(godparentsVisible, 'slide-in-right', 'delay-600')}`}>
+                  <div className="rounded-xl p-6 ">
                     <div className="flex items-center justify-center mb-4">
-                      <span className="text-3xl animate-heart-beat mr-2">🤝</span>
+                      
                       <h3 className={godparentsVisible ? completeClass : basicClass}>
                         Mis Tutores
                       </h3>
-                      <span className="text-3xl animate-heart-beat ml-2">🤝</span>
+                      
                     </div>
-                    <div className="space-y-3">
+                    <div className="space-y-3 text-cyan-900">
                       <div className="flex items-center justify-center space-x-2">
-                        <span className="text-lg">🤵</span>
+                        
                         <p className="text-xl font-medium text-glow">
                           {godparents.godfather}
                         </p>
                       </div>
+                      <p>&</p>
                       <div className="flex items-center justify-center space-x-2">
-                        <span className="text-lg">👰</span>
-                        <p className="text-xl font-medium text-glow">
-                          {godparents.godmother}
-                        </p>
-                      </div>
-                      <div className="flex items-center justify-center space-x-2">
-                        <span className="text-lg">👰</span>
+                        
                         <p className="text-xl font-medium text-glow">
                           {godparents.additionalGodmother}
+                        </p>
+                      </div>
+                      <p>&</p>
+                      <div className="flex items-center justify-center space-x-2">
+                        
+                        <p className="text-xl font-medium text-glow">
+                          {godparents.godmother}
                         </p>
                       </div>
                     </div>

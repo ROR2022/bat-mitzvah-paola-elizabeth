@@ -554,16 +554,16 @@ ${formData.mensaje ? `💌 *Mensaje especial:*\n${formData.mensaje}` : ""}
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat", */
-        backgroundColor: "#fff",
+        //backgroundColor: "#fff",
       }}
       className="relative py-20 px-4"
     >
 
-      <BackgroundCarrousel images={attendance.images} />
+      {/* <BackgroundCarrousel images={attendance.images} /> */}
 
       
 
-      <div className="max-w-2xl mx-auto relative bg-slate-300 bg-opacity-30 rounded-3xl">
+      <div className="max-w-2xl mx-auto relative rounded-3xl">
         <div
           className="rounded-3xl p-10 shadow-2xl border-2 relative overflow-hidden"
           
@@ -589,7 +589,7 @@ ${formData.mensaje ? `💌 *Mensaje especial:*\n${formData.mensaje}` : ""}
             </div>
 
             <h3
-              className={`text-4xl font-main-text font-bold mb-4 leading-tight text-purple-500 transition-all duration-1000 delay-1000 ${
+              className={`text-4xl font-main-text font-bold mb-4 leading-tight text-sky-700 transition-all duration-1000 delay-1000 ${
                 isVisible 
                   ? 'opacity-100 translate-y-0' 
                   : 'opacity-0 -translate-y-8'

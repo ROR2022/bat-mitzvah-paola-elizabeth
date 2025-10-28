@@ -50,9 +50,22 @@ export default function WeddingInvitation() {
   return (
     <div 
     style={{
-      background: 'linear-gradient(135deg, #f7e6e6, #e3aaaa)',
+      //background: "url('/images/texturaAzul01.jpeg')",
+      //linear gradient background from top to bottom en tonos azul pastel pero que sea muy suave y que se repita 
+      //que tambien simule un papel texturizado como si fueran nubes o formas irregulares muy suaves
+      //background: "linear-gradient(to bottom, #d0e7f9, #f0f4f8)",
+     
     }}
-    className="min-h-screen">
+    className="min-h-screen relative overflow-hidden">
+
+      {/* Fondo base con degradado */}
+      <div className="absolute inset-0 bg-gradient-to-br from-sky-300 via-blue-200 to-indigo-300" />
+
+      {/* Capa de nubes con CSS */}
+            <div className="cloud-layer absolute inset-0" />
+      
+            {/* Textura sutil */}
+            <div className="absolute inset-0 opacity-30 mix-blend-overlay bg-noise" />
       {/* <Navigation /> */}
       {/* <DecorationElement /> */}
       <HeroSection />
@@ -66,7 +79,7 @@ export default function WeddingInvitation() {
       <GiftsSection />
       {/* <GallerySection /> */}
       <PremiumGallery />
-      <VideoElement />
+      {/* <VideoElement /> */}
       {/* <QRCode /> */}
       {/* <CustomInvitations /> */}
       <Link 

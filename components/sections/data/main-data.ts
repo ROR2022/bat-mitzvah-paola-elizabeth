@@ -24,12 +24,7 @@ export const quinceMainData = {
     parents: {
       father: "Oscar Ramírez Capultitla",
       mother: "Edna Areli Serrano Ortíz",
-      message: `Hoy, mi corazón rebosa de gratitud. 
-      Agradezco a Dios por guiarme y bendecirme en cada paso de mi vida, 
-      y a mis padres por su amor, su ejemplo y su apoyo constante. 
-      Hace doce años mis padres agradecieron a Dios por mi llegada al mundo. 
-      Hoy, yo agradezco por ellos, por su infinito amor, 
-      paciencia y por enseñarme el valor de la fe y la familia.`,
+      message: `Con la Bendicion de Dios y de`,
       backgroundImage: "/images/fondoPaola1.png",
     },
     /**
@@ -177,27 +172,117 @@ Aurora Chávez Capultitla
     images: [
       {
         id: "image1",
-        src: "/images/paola01.jpeg",
+        src: "/images/pao01.jpg",
         alt: "Paola Elizabeth en sus XV años",
-        caption: "Paola Elizabeth radiante en su día especial.",
+        caption: "",
       },
       {
         id: "image2",
-        src: "/images/paola02.jpeg",
+        src: "/images/pao02.jpg",
         alt: "Baile de Quinceañera",
-        caption: "El emotivo primer baile de Paola Elizabeth.",
+        caption: "",
       },
       {
         id: "image3",
-        src: "/images/paola03.jpeg",
+        src: "/images/pao03.jpg",
         alt: "Corte de Pastel",
-        caption: "El dulce momento del corte de pastel.",
+        caption: "",
       },
       {
         id: "image4",
-        src: "/images/paola04.jpeg",
+        src: "/images/pao04.jpg",
         alt: "Celebración con Familia y Amigos",
-        caption: "Paola Elizabeth rodeada de sus seres queridos.",
+        caption: "",
+      },
+      {
+        id: "image6",
+        src: "/images/pao06.jpg",
+        alt: "Diversión en la Fiesta",
+        caption: "",
+      },
+      {
+        id: "image7",
+        src: "/images/pao07.jpg",
+        alt: "Baile con Padres",
+        caption: "",
+      },
+      {
+        id: "image8",
+        src: "/images/pao08.jpg",
+        alt: "Amigos y Familiares",
+        caption: "",
+      },  
+      {
+        id: "image9",
+        src: "/images/pao09.jpg",
+        alt: "Sonrisas Inolvidables",
+        caption: "",
+      },
+      {
+        id: "image10",
+        src: "/images/pao10.jpg",
+        alt: "Diversión Garantizada",
+        caption: "",
+      },
+      {
+        id: "image11",
+        src: "/images/pao11.jpg",
+        alt: "Celebrando Juntos",
+        caption: "",
+      },
+      {
+        id: "image12",
+        src: "/images/pao12.jpg",
+        alt: "Recuerdos para toda la Vida",
+        caption: "",
+      },  
+      {
+        id: "image13",
+        src: "/images/pao13.jpg",
+        alt: "Momentos de Alegría",
+        caption: "",
+      },
+      {
+        id: "image14",
+        src: "/images/pao14.jpg",
+        alt: "Fiesta y Diversión",
+        caption: "",
+      },
+      {
+        id: "image15",
+        src: "/images/pao15.jpg",
+        alt: "Un Día Inolvidable",
+        caption: "",
+      },
+      {
+        id: "image16",
+        src: "/images/pao16.jpg",
+        alt: "Celebración Especial",
+        caption: "",
+      },
+      {
+        id: "image17",
+        src: "/images/pao17.jpg",
+        alt: "Recuerdos Felices",
+        caption: "",
+      },
+      {
+        id: "image18",
+        src: "/images/pao18.jpg",
+        alt: "Diversión sin Fin",
+        caption: "",
+      },
+      {
+        id: "image19",
+        src: "/images/pao19.jpg",
+        alt: "Momentos para Recordar",
+        caption: "",
+      },
+      {
+        id: "image20",
+        src: "/images/pao20.jpg",
+        alt: "Celebrando la Vida",
+        caption: "",
       },
     ],
     imagesUrls: [

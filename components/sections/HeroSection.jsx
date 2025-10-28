@@ -17,9 +17,9 @@ export default function HeroSection() {
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
   const [isVisible, setIsVisible] = useState(false);
 
-  const basicClass = "font-script text-4xl text-white mb-4 italic";
+  const basicClass = "font-script text-4xl text-sky-700 mb-4 italic";
   const completeClass =
-    "font-script text-4xl text-white mb-4 scale-up-center italic";
+    "font-script text-4xl text-sky-700 mb-4 scale-up-center italic";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,17 +43,17 @@ export default function HeroSection() {
     <section
       //ref={sectionRef}
       style={{
-        backgroundImage: `url('${hero.backgroundImage}')`,
+        backgroundImage: `url('/images/marcoFlores1.jpeg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        backgroundColor: "#89ac76",
+        //backgroundColor: "#89ac76",
         position: "relative",
       }}
       //id="home"
-      className="min-h-screen flex flex-col justify-center items-center relative pt-20"
+      className="min-h-screen flex flex-col justify-center items-center relative"
     >
-      <BackgroundCarrousel images={backgroundCarrouselImages}/>
+      {/* <BackgroundCarrousel images={backgroundCarrouselImages}/> */}
 
       {/* Contenido principal - Usar solo animación CSS, no scroll-based */}
       <div
@@ -62,7 +62,7 @@ export default function HeroSection() {
             //backgroundColor:'#C8BFE780'
           }
         }
-        className="bg-slate-400 bg-opacity-50 p-6 rounded-2xl relative z-10 text-center space-y-6 px-4"
+        className="flex flex-col justify-center items-center text-center px-4 py-20 md:py-32 lg:py-40"
       >
         <h1
           style={{
@@ -89,25 +89,9 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div
-          style={{ display: "none" }}
-          className="flex justify-center items-center gap-4 mt-8"
-        >
-          <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center">
-            <div className="w-8 h-8 bg-white rounded-full"></div>
-          </div>
-          <Heart className="w-8 h-8 text-secondary" />
-          <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center">
-            <div className="w-8 h-8 bg-white rounded-full"></div>
-          </div>
-        </div>
+        
 
-        <p
-          style={{ display: "none" }}
-          className="text-lg text-muted-foreground italic max-w-md mx-auto"
-        >
-          &ldquo;{hero.quote}&rdquo;
-        </p>
+        
       </div>
     </section>
   );

@@ -72,13 +72,16 @@ export default function CeremonySection() {
   return (
     <section
       ref={sectionRef}
-      style={{
+      /* style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('${parents.backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
-      }}
+      }} */
+     style={{
+      //background: "url('/images/texturaAzul01.jpeg')",
+    }}
       id="ceremony"
       className="py-20 relative overflow-hidden"
     >
@@ -86,34 +89,9 @@ export default function CeremonySection() {
       {/* Cortina teatral de entrada */}
       <div className={getElegantAnimationClass(curtainVisible, 'curtain-reveal', 'delay-200')}>
         
-        {/* Elementos decorativos elegantes flotantes */}
-        <div className="elegant-element top-12 left-12 animate-elegant-float delay-300">
-          <span className="text-4xl mask-icon animate-mask-spin">🎭</span>
-        </div>
-        <div className="elegant-element top-16 right-16 animate-elegant-float delay-600">
-          <span className="text-3xl celebration-icon">✨</span>
-        </div>
-        <div className="elegant-element bottom-20 left-20 animate-elegant-float delay-900">
-          <span className="text-3xl celebration-icon">🎪</span>
-        </div>
-        <div className="elegant-element bottom-16 right-20 animate-elegant-float delay-1200">
-          <span className="text-4xl mask-icon animate-mask-spin">🎭</span>
-        </div>
+       
 
-        {/* Confetti elegante flotante */}
-        {Array.from({length: 12}).map((_, i) => (
-          <div 
-            key={i}
-            className={`confetti-piece animate-confetti-drop ${
-              i % 3 === 0 ? 'confetti-gold' : 
-              i % 3 === 1 ? 'confetti-pink' : 'confetti-white'
-            }`}
-            style={{
-              left: `${5 + i * 8}%`,
-              animationDelay: `${i * 0.8}s`
-            }}
-          />
-        ))}
+        
 
         <div className="container text-white mx-auto px-4 p-6 rounded-2xl relative z-10">
           <div className="max-w-6xl mx-auto">
@@ -123,20 +101,20 @@ export default function CeremonySection() {
               
               {/* Card de Ceremonia - Slide desde izquierda */}
               <div className={getElegantAnimationClass(ceremonyCardVisible, 'card-slide-left', 'delay-400')}>
-                <div className="ceremony-card rounded-2xl p-8 text-center space-y-6 animate-theatrical-glow">
-                  <div className="text-5xl text-yellow-400 font-main-text mb-4 elegant-text-glow">
+                <div className="p-8 text-center space-y-6">
+                  <div className="text-5xl text-cyan-700 font-main-text mb-4">
                     Ceremonia
                   </div>
                   <h4 className={ceremonyCardVisible ? completeClass : basicClass}>
                     {ceremony.venue}
                   </h4>
                   <div className="flex items-center justify-center gap-2">
-                    <Clock className="w-6 h-6 text-yellow-400" />
+                    <Clock className="w-6 h-6 text-cyan-800" />
                     <span className="text-2xl font-medium elegant-text-glow">
                       {ceremony.time}
                     </span>
                   </div>
-                  <p className="text-white/80">
+                  <p className="text-sky-400">
                     {ceremony.address}
                   </p>
                   <Button
@@ -153,7 +131,7 @@ export default function CeremonySection() {
               <div className={getElegantAnimationClass(imageVisible, 'curtain-reveal', 'delay-600')}>
                 <div className="spotlight-image relative w-full h-96 rounded-2xl shadow-2xl overflow-hidden mx-auto">
                   <Image
-                    src={ceremony.ceremonyImage}
+                    src='/images/pao20.jpg'
                     alt="Ceremony Image"
                     fill
                     className="object-cover"
@@ -165,25 +143,25 @@ export default function CeremonySection() {
 
               {/* Card de Recepción - Slide desde derecha */}
               <div className={getElegantAnimationClass(partyCardVisible, 'card-slide-right', 'delay-800')}>
-                <div className="ceremony-card rounded-2xl p-8 text-center space-y-6 animate-theatrical-glow">
-                  <div className="text-5xl text-pink-400 font-main-text mb-4 elegant-text-glow">
+                <div className="rounded-2xl p-8 text-center space-y-6">
+                  <div className="text-5xl text-cyan-700 font-main-text mb-4">
                     Recepción
                   </div>
                   <h4 className={partyCardVisible ? completeClass : basicClass}>
                     {party.venue}
                   </h4>
                   <div className="flex items-center justify-center gap-2">
-                    <Clock className="w-6 h-6 text-pink-400" />
+                    <Clock className="w-6 h-6 text-cyan-800" />
                     <span className="text-2xl font-medium elegant-text-glow">
                       {party.time}
                     </span>
                   </div>
-                  <p className="text-white/80">
+                  <p className="text-sky-400">
                     {party.address}
                   </p>
                   <Button
                     onClick={() => window.open(party.ubiLink, "_blank")}
-                    className="bg-pink-600 hover:bg-pink-700 text-white rounded-full px-8 py-3 transform hover:scale-105 transition-all duration-300"
+                    className="bg-yellow-600 hover:bg-yellow-700 text-white rounded-full px-8 py-3 transform hover:scale-105 transition-all duration-300"
                   >
                     <MapPin className="w-4 h-4 mr-2" />
                     Ir al mapa

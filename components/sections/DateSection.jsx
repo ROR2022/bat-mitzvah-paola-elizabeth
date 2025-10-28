@@ -76,49 +76,29 @@ export default function DateSection() {
   return (
     <section 
       ref={sectionRef}
-      style={{
+      /* style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('${parents.backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         position: 'relative',
-      }}
+      }} */
+     style={{
+      //background: "url('/images/texturaAzul01.jpeg')",
+    }}
       id="date" 
-      className={`py-20 ${isInView ? 'animate-time-warp' : ''}`}
+      className={`relative overflow-hidden`}
     >
-      <BackgroundCarrousel images={date.backgroundCarrouselImages || []} />
-      {/* Elementos temporales/cósmicos orbitales */}
-      <div className="temporal-element top-16 left-16 animate-orbital-float delay-200">
-        <span className="text-3xl clock-icon animate-clock-tick">🕒</span>
-      </div>
-      <div className="temporal-element top-24 right-20 animate-orbital-float delay-500" style={{animationDirection: 'reverse'}}>
-        <span className="text-2xl cosmic-star animate-star-shimmer delay-300">⭐</span>
-      </div>
-      <div className="temporal-element bottom-20 left-24 animate-orbital-float delay-800">
-        <span className="text-2xl clock-icon animate-clock-tick delay-400">⌚</span>
-      </div>
-      <div className="temporal-element bottom-16 right-16 animate-orbital-float delay-1000" style={{animationDirection: 'reverse'}}>
-        <span className="text-3xl cosmic-star animate-star-shimmer delay-600">🌟</span>
-      </div>
+      {/* <BackgroundCarrousel images={date.backgroundCarrouselImages || []} /> */}
+      
+      
 
-      {/* Partículas temporales flotantes */}
-      {Array.from({length: 8}).map((_, i) => (
-        <div 
-          key={i}
-          className="time-particle animate-time-particle"
-          style={{
-            left: `${10 + i * 12}%`,
-            animationDelay: `${i * 1.2}s`
-          }}
-        />
-      ))}
-
-      <div className="container text-white rounded-b-2xl mx-auto px-4 p-6 rounded-2xl relative z-10">
+      <div className="container text-white mx-auto px-4 p-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           
           {/* Mensaje inicial con animación cósmica */}
           <div className={getCosmicAnimationClass(titleVisible, 'cosmic-fade-in', 'delay-100')}>
-            <p className="text-lg text-muted-foreground italic text-glow">
+            <p className="text-lg italic text-blue-700 font-bold">
               {date.mensaje1}
             </p>
           </div>
@@ -182,7 +162,7 @@ export default function DateSection() {
 
           {/* Mensaje final */}
           <div className={getCosmicAnimationClass(cardVisible, 'cosmic-fade-in', 'delay-500')}>
-            <h3 className="font-script text-3xl text-secondary text-glow">
+            <h3 className="font-script text-3xl text-blue-700 italic font-bold">
               {date.mensaje2}
             </h3>
           </div>

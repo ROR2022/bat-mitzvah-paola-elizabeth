@@ -45,10 +45,10 @@ export default function GiftsSection() {
     <section
       ref={sectionRef}
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${parents.backgroundImage}')`,
+        /* backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${parents.backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundRepeat: 'no-repeat', */
         position: 'relative',
       }}
       id="gifts"
@@ -66,7 +66,7 @@ export default function GiftsSection() {
           }`}>
             <h2 
               style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}
-              className="font-main-text text-5xl text-indigo-500"
+              className="font-main-text text-5xl text-sky-700"
             >
               Regalo
             </h2>

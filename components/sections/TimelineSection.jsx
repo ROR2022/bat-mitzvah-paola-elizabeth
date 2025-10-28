@@ -75,17 +75,17 @@ export default function TimelineSection() {
   return (
     <section
       ref={sectionRef}
-      style={{
+      /* style={{
         backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('${parents.backgroundImage}')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         position: "relative",
-      }}
+      }} */
       id="timeline"
       className="py-20 min-h-screen relative overflow-hidden"
     >
-      <BackgroundCarrousel images={timeline.images}/>
+      {/* <BackgroundCarrousel images={timeline.images}/> */}
       
       {/* Partículas sparkle mágicas */}
       {sparklePositions.map((sparkle) => (
@@ -167,7 +167,7 @@ export default function TimelineSection() {
                 <div className="absolute -inset-2 bg-gradient-to-br from-purple-600 via-pink-500 to-violet-600 rounded-full opacity-75 animate-spin" style={{ animationDuration: '8s' }}></div>
                 <div className="relative w-full h-full rounded-full overflow-hidden">
                   <Image
-                    src={timeline.timelineImage}
+                    src='/images/pao18.jpg'
                     alt="Portal del tiempo"
                     fill
                     className="object-cover scale-110"
@@ -231,7 +231,7 @@ export default function TimelineSection() {
                     }`}
                     style={{ 
                       transitionDelay: `${1200 + (index * 200)}ms`,
-                      display: windowWidth < 400 ? 'none' : 'block' 
+                      display: 'none'  
                       }} />
                     
                     <div className="flex items-center gap-6">
@@ -254,11 +254,7 @@ export default function TimelineSection() {
                         <h3 className="font-bold text-xl mb-2">
                           {item.title}
                         </h3>
-                        <div className={`text-3xl font-bold ${
-                          item.color === "primary"
-                            ? "text-purple-300"
-                            : "text-pink-300"
-                        }`}>
+                        <div className={`text-3xl font-bold text-sky-700`}>
                           {item.time}
                         </div>
                       </div>
@@ -275,17 +271,11 @@ export default function TimelineSection() {
           }`}
           style={{ transitionDelay: `${1000 + (events.length * 200) + 500}ms` }}>
             <div className="bg-slate-300 bg-opacity-50 max-w-2xl mx-auto p-8 rounded-2xl border border-purple-400/30">
-              <div className="mb-4">
-                <span className="text-4xl inline-block animate-bounce">🌟</span>
-              </div>
-              <p className="text-2xl italic text-white font-bold">
+              
+              <p className="text-xl italic text-blue-500 font-bold">
                 &ldquo;{timeline.mensaje}&rdquo;
               </p>
-              <div className="mt-6 flex justify-center gap-4">
-                <span className="text-2xl inline-block animate-pulse" style={{ animationDelay: '0.5s' }}>✨</span>
-                <span className="text-2xl inline-block animate-pulse" style={{ animationDelay: '1s' }}>🪄</span>
-                <span className="text-2xl inline-block animate-pulse" style={{ animationDelay: '1.5s' }}>💫</span>
-              </div>
+              
             </div>
           </div>
         </div>

@@ -101,10 +101,10 @@ export function PremiumGallery() {
   return (
     <section 
     style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${parents.backgroundImage}')`,
+        /* backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${parents.backgroundImage}')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
+        backgroundRepeat: 'no-repeat', */
         position: 'relative',
       }}
     className="py-16 px-4">
@@ -120,7 +120,10 @@ export function PremiumGallery() {
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 -translate-y-12'
           }`}>
-            <div className="inline-block text-white px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-lg" style={{ background: 'linear-gradient(to right, #e3aaaa, #d49999)' }}>
+            <div 
+            className="inline-block text-white px-4 py-2 rounded-full text-sm font-medium mb-6 shadow-lg bg-sky-700" 
+            //style={{ background: 'linear-gradient(to right, #e3aaaa, #d49999)' }}
+            >
               📸 Galería
             </div>
           </div>
@@ -132,7 +135,7 @@ export function PremiumGallery() {
               : 'opacity-0 -translate-y-12'
           }`}>
             <h2 
-              className="text-5xl text-amber-500 font-bold mb-4 font-main-text" 
+              className="text-5xl text-sky-700 font-bold mb-4 font-main-text" 
               style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}
             >
               {gallery.title}
@@ -182,7 +185,7 @@ export function PremiumGallery() {
             : 'opacity-0 translate-y-8'
         }`}>
           <div>
-            <p className='text-gray-900'>Click en la imagen para ampliarla</p>
+            <p className='text-white'>Click en la imagen para ampliarla</p>
           </div>
         </div>
         {/* Galería principal con animación */}

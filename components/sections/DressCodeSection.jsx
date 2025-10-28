@@ -49,10 +49,10 @@ export default function DressCodeSection() {
       id="dresscode"
       className="py-20"
       style={{
-        backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('${parents.backgroundImage}')`,
+        /* backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('${parents.backgroundImage}')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        backgroundRepeat: "no-repeat", */
         position: "relative",
       }}
     >
@@ -66,7 +66,7 @@ export default function DressCodeSection() {
       >
         <div className="max-w-4xl mx-auto text-center space-y-8">
           {/* Título - Animación desde arriba */}
-          <h2 className={`font-main-text text-5xl text-indigo-500 transition-all duration-700 ${
+          <h2 className={`font-main-text text-5xl text-sky-700 transition-all duration-700 ${
             isVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 -translate-y-8'
@@ -125,7 +125,9 @@ export default function DressCodeSection() {
           </div>
 
           {/* Restricción - Animación desde abajo */}
-          <p className={`text-xl text-indigo-500 my-4 font-bold transition-all duration-700 delay-1000 ${
+          <p 
+          style={{display:'none'}}
+          className={`text-xl text-indigo-500 my-4 font-bold transition-all duration-700 delay-1000 ${
             isVisible 
               ? 'opacity-100 translate-y-0' 
               : 'opacity-0 translate-y-8'
