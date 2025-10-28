@@ -6,10 +6,11 @@ export const quinceMainData = {
     quote:
       "La vida es un viaje mágico, y hoy celebro un capítulo especial lleno de sueños y esperanza.",
     backgroundCarrouselImages: [
-      "/images/paola01.jpeg",
-      "/images/paola02.jpeg",
-      "/images/paola03.jpeg",
-      "/images/paola04.jpeg",
+      "/images/pao16.jpg",
+      "/images/pao17.jpg",
+      "/images/pao18.jpg",
+      "/images/pao19.jpg",
+      "/images/pao20.jpg",
     ],
   },
   welcomeSection: {
@@ -52,10 +53,11 @@ Aurora Chávez Capultitla
       mensaje1: "¡La cuenta regresiva ha comenzado!",
       mensaje2: "TAN SOLO FALTAN",
       backgroundCarrouselImages: [
-        "/images/paola01.jpeg",
-      "/images/paola02.jpeg",
-      "/images/paola03.jpeg",
-      "/images/paola04.jpeg",
+        "/images/pao16.jpg",
+      "/images/pao17.jpg",
+      "/images/pao18.jpg",
+      "/images/pao19.jpg",
+      "/images/pao20.jpg",
       ],
     },
     //Misa a la 1pm parroquia Santa fe de Guadalupe, la Sauceda Guanajuato.
@@ -85,10 +87,11 @@ Aurora Chávez Capultitla
     Desde la ceremonia hasta la celebración, cada detalle refleja el amor y 
     la alegría que compartimos. ¡Espero que disfrutes cada instante tanto como yo!`,
     images: [
-      "/images/paola01.jpeg",
-      "/images/paola02.jpeg",
-      "/images/paola03.jpeg",
-      "/images/paola04.jpeg",
+      "/images/pao16.jpg",
+      "/images/pao17.jpg",
+      "/images/pao18.jpg",
+      "/images/pao19.jpg",
+      "/images/pao20.jpg",
     ],
     events: [
       {
@@ -148,10 +151,11 @@ Aurora Chávez Capultitla
       },
     },
     images:[
-      "/images/paola01.jpeg",
-      "/images/paola02.jpeg",
-      "/images/paola03.jpeg",
-      "/images/paola04.jpeg",
+      "/images/pao16.jpg",
+      "/images/pao17.jpg",
+      "/images/pao18.jpg",
+      "/images/pao19.jpg",
+      "/images/pao20.jpg",
     ],
     thankYouMessage:
       "¡Gracias por confirmar tu asistencia! Nos alegra que puedas acompañarnos en este día tan especial.",
@@ -160,35 +164,9 @@ Aurora Chávez Capultitla
     title: "Lista de Regalos",
     subtitle: "Tu presencia es el mejor regalo, pero si deseas contribuir, aquí tienes algunas ideas.",
     message:
-      "Agradezco de corazón tu generosidad y apoyo en este día tan especial. ¡Gracias por ser parte de mi vida!",
+      "Tu presencia en mi Bat Mitzvah es el mejor regalo que podría recibir. Sin embargo, si deseas contribuir con un detalle especial, lo agradeceré profundamente.",
     giftsOptions: [
-      {
-        id: "lluviaSobres",
-        name: "Lluvia de Sobres",
-        icon: "💌",
-        description:
-          "Tu presencia es el mejor regalo, pero si deseas contribuir, una lluvia de sobres sería muy apreciada.",
-        image: "/images/gifts/envelope.png",
-        link: "https://example.com/lluvia-de-sobres",
-      },
-      {
-        id: "transferencia",
-        name: "Transferencia Bancaria",
-        icon: "🏦",
-        description:
-          "Si prefieres, puedes hacer una transferencia bancaria como regalo.",
-        image: "/images/gifts/bank-transfer.png",
-        link: "https://example.com/transferencia-bancaria",
-      },
-      {
-        id: "mesaRegalos",
-        name: "Mesa de Regalos",
-        icon: "🎁",
-        description:
-          "Hemos creado una mesa de regalos con opciones que nos encantaría recibir.",
-        image: "/images/gifts/gift-box.png",
-        link: "https://example.com/mesa-de-regalos",
-      }
+      
     ],
   },
   gallery: {

@@ -59,7 +59,7 @@ export default function WelcomeMessage({ onContinue }) {
 
       {/* Main content card con animación especial */}
       <div
-        className={`relative bg-slate-400 bg-opacity-50 rounded-2xl p-6 z-10 max-w-3xl mx-auto transition-all duration-1000 delay-0 ${
+        className={`relative bg-slate-400 bg-opacity-50 rounded-2xl py-6 z-10 max-w-3xl mx-auto transition-all duration-1000 delay-0 ${
           isVisible 
             ? 'opacity-100 welcome-card-entrance' 
             : 'opacity-0 scale-50'
@@ -106,7 +106,7 @@ export default function WelcomeMessage({ onContinue }) {
               style={{ 
                 textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)',
               }}
-              className="text-3xl font-bold leading-relaxed text-white font-main-text"
+              className="text-2xl font-bold text-white font-main-text"
             >
               {quinceMainData.welcomeSection.message}
             </p>
