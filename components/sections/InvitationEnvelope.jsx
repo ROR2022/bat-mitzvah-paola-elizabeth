@@ -48,6 +48,7 @@ function EnvelopeContent({ onOpen }) {
           setInviteData({
             name: dataGuest.name,
             message: personalInvitation?.message || "Te esperamos para celebrar este día tan especial",
+            guestCount: dataGuest.guestCount || 1,
           });
         } else {
           // Si no hay datos, usar fallback
@@ -181,7 +182,7 @@ function EnvelopeContent({ onOpen }) {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/video/videoSobreAzul.mp4" type="video/mp4" />
+          <source src="/video/videoSobreAzul2.mp4" type="video/mp4" />
         </video>
         {/* Overlay azul pastel más sutil */}
         <div className="absolute inset-0 bg-blue-900/20"></div>
@@ -220,7 +221,7 @@ function EnvelopeContent({ onOpen }) {
                 inviteData?.name || "Invitado Especial"
               )}
             </div>
-            
+            <div>{inviteData? `${inviteData.guestCount} Personas`:""}</div>
             <div className="text-xl text-blue-700 font-semibold drop-shadow-sm">
               {event.date.full}
             </div>

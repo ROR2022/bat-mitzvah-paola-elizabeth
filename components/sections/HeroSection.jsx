@@ -67,6 +67,7 @@ export default function HeroSection() {
         <h1
           style={{
             textShadow: "4px 4px 8px rgba(0, 0, 0, 0.5)",
+            display: "none",
           }}
           className={isVisible ? completeClass : basicClass}
         >
