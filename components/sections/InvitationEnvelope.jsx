@@ -11,9 +11,9 @@ function EnvelopeContent({ onOpen }) {
   const [inviteData, setInviteData] = useState(null); // Datos de la invitación
   const [isLoading, setIsLoading] = useState(false); // Estado de carga
   const [hasGuestParam, setHasGuestParam] = useState(false); // Si hay parámetro guest
-  
+
   // Estados para la animación temporal - Opción C (12 segundos)
-  const [contentState, setContentState] = useState('hidden');
+  const [contentState, setContentState] = useState("hidden");
   const [isPaused, setIsPaused] = useState(false);
   const [animationTimer, setAnimationTimer] = useState(null);
 
@@ -31,7 +31,7 @@ function EnvelopeContent({ onOpen }) {
       // Si no hay parámetro guest, usar datos por defecto
       setInviteData({
         name: "Invitado Especial",
-        message: "Te esperamos para celebrar este día tan especial"
+        message: "Te esperamos para celebrar este día tan especial",
       });
     }
   }, [searchParams]);
@@ -47,22 +47,24 @@ function EnvelopeContent({ onOpen }) {
           const { personalInvitation } = dataGuest;
           setInviteData({
             name: dataGuest.name,
-            message: personalInvitation?.message || "Te esperamos para celebrar este día tan especial",
+            message:
+              personalInvitation?.message ||
+              "Te esperamos para celebrar este día tan especial",
             guestCount: dataGuest.guestCount || 1,
           });
         } else {
           // Si no hay datos, usar fallback
           setInviteData({
             name: "Invitado Especial",
-            message: "Te esperamos para celebrar este día tan especial"
+            message: "Te esperamos para celebrar este día tan especial",
           });
         }
       } else {
         console.error("Guest not found");
         // En caso de error, usar datos por defecto
         setInviteData({
-          name: "Invitado Especial", 
-          message: "Te esperamos para celebrar este día tan especial"
+          name: "Invitado Especial",
+          message: "Te esperamos para celebrar este día tan especial",
         });
       }
     } catch (error) {
@@ -70,7 +72,7 @@ function EnvelopeContent({ onOpen }) {
       // En caso de error, usar datos por defecto
       setInviteData({
         name: "Invitado Especial",
-        message: "Te esperamos para celebrar este día tan especial"
+        message: "Te esperamos para celebrar este día tan especial",
       });
     } finally {
       setIsLoading(false);
@@ -80,36 +82,36 @@ function EnvelopeContent({ onOpen }) {
   // Lógica de animación temporal - Opción C (12 segundos)
   const startAnimationCycle = () => {
     if (isPaused) return;
-    
+
     // Timeline de 12 segundos:
     // 0-4s: hidden (solo video)
     // 4-5s: appearing (aparece)
     // 5-9s: visible (4 segundos visible)
     // 9-10s: disappearing (desaparece)
     // 10-12s: hidden (solo video)
-    
-    setContentState('hidden');
-    
+
+    setContentState("hidden");
+
     const timer1 = setTimeout(() => {
-      if (!isPaused) setContentState('appearing');
+      if (!isPaused) setContentState("appearing");
     }, 4000); // 4 segundos
-    
+
     const timer2 = setTimeout(() => {
-      if (!isPaused) setContentState('visible');
+      if (!isPaused) setContentState("visible");
     }, 5000); // 5 segundos
-    
+
     const timer3 = setTimeout(() => {
-      if (!isPaused) setContentState('disappearing');
+      if (!isPaused) setContentState("disappearing");
     }, 9000); // 9 segundos
-    
+
     const timer4 = setTimeout(() => {
       if (!isPaused) {
-        setContentState('hidden');
+        setContentState("hidden");
         // Reiniciar ciclo
         startAnimationCycle();
       }
     }, 10000); // 10 segundos (ciclo completo en 12s con 2s de pausa)
-    
+
     // Guardar referencia para limpiar si es necesario
     setAnimationTimer([timer1, timer2, timer3, timer4]);
   };
@@ -120,11 +122,11 @@ function EnvelopeContent({ onOpen }) {
     const initialDelay = setTimeout(() => {
       startAnimationCycle();
     }, 1000);
-    
+
     return () => {
       clearTimeout(initialDelay);
       if (animationTimer) {
-        animationTimer.forEach(timer => clearTimeout(timer));
+        animationTimer.forEach((timer) => clearTimeout(timer));
       }
     };
   }, []);
@@ -132,7 +134,7 @@ function EnvelopeContent({ onOpen }) {
   // Limpiar timers cuando se pausa
   useEffect(() => {
     if (isPaused && animationTimer) {
-      animationTimer.forEach(timer => clearTimeout(timer));
+      animationTimer.forEach((timer) => clearTimeout(timer));
       setAnimationTimer(null);
     }
   }, [isPaused]);
@@ -140,7 +142,7 @@ function EnvelopeContent({ onOpen }) {
   // Manejar hover/interacción
   const handleMouseEnter = () => {
     setIsPaused(true);
-    setContentState('visible');
+    setContentState("visible");
   };
 
   const handleMouseLeave = () => {
@@ -189,19 +191,24 @@ function EnvelopeContent({ onOpen }) {
       </div>
 
       {/* Contenedor principal centrado con animación */}
-      <div className={`relative z-10 max-w-lg mx-auto px-6 envelope-float content-${contentState}`}>
+      <div
+        className={`relative z-10 max-w-lg mx-auto px-6 envelope-float content-${contentState}`}
+      >
         {/* Tarjeta principal */}
         <div className="bg-gradient-to-br from-blue-50/60 via-sky-50/65 to-blue-100/60 backdrop-blur-sm backdrop-saturate-150 rounded-2xl shadow-xl shadow-blue-500/20 border border-blue-300/70 p-8 text-center transition-all duration-500 group-hover:shadow-blue-400/40 envelope-glow relative overflow-hidden">
-          
           {/* Efecto shimmer */}
           <div className="absolute inset-0 envelope-shimmer rounded-2xl"></div>
-          
+
           {/* Icono de sobre decorativo */}
           <div className="flex justify-center mb-6 relative z-10">
             <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
-              <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+              <svg
+                className="w-8 h-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
             </div>
           </div>
@@ -213,7 +220,7 @@ function EnvelopeContent({ onOpen }) {
                 Invitación Para:
               </h5>
             )}
-            
+
             <div className="text-3xl font-bold text-blue-900 leading-tight drop-shadow-md">
               {isLoading ? (
                 <div className="animate-pulse bg-gradient-to-r from-blue-200/70 via-sky-200/70 to-blue-200/70 h-10 w-64 rounded-lg mx-auto"></div>
@@ -221,17 +228,20 @@ function EnvelopeContent({ onOpen }) {
                 inviteData?.name || "Invitado Especial"
               )}
             </div>
-            <div>{inviteData? `${inviteData.guestCount} Personas`:""}</div>
+            {inviteData && inviteData.guestCount && (
+              <div>{inviteData ? `${inviteData.guestCount} Personas` : ""}</div>
+            )}
+
             <div className="text-xl text-blue-700 font-semibold drop-shadow-sm">
               {event.date.full}
             </div>
-            
+
             {inviteData?.message && !isLoading && (
               <div className="text-blue-600 italic text-base leading-relaxed px-2 drop-shadow-sm">
                 "{inviteData.message}"
               </div>
             )}
-            
+
             {isLoading && (
               <div className="text-blue-600 italic text-base px-2 drop-shadow-sm animate-pulse">
                 Cargando tu invitación personalizada...
@@ -244,16 +254,40 @@ function EnvelopeContent({ onOpen }) {
             {isLoading ? (
               <div className="flex items-center justify-center space-x-2 text-blue-600 drop-shadow-sm">
                 <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
-                <span className="text-sm font-medium">Cargando invitación...</span>
+                <span className="text-sm font-medium">
+                  Cargando invitación...
+                </span>
               </div>
             ) : (
               <div className="flex items-center justify-center space-x-2 text-blue-600 animate-bounce drop-shadow-sm">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.122 2.122" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.122 2.122"
+                  />
                 </svg>
-                <span className="text-sm font-medium">Toca en cualquier lugar para abrir</span>
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.122 2.122" />
+                <span className="text-sm font-medium">
+                  Toca en cualquier lugar para abrir
+                </span>
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.122 2.122"
+                  />
                 </svg>
               </div>
             )}
@@ -270,14 +304,20 @@ function EnvelopeContent({ onOpen }) {
       <div className="absolute top-6 right-6 z-20">
         {isPaused ? (
           <div className="bg-blue-600/20 backdrop-blur-sm rounded-full p-2">
-            <svg className="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M8 5v14l11-7z"/>
+            <svg
+              className="w-4 h-4 text-blue-400"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M8 5v14l11-7z" />
             </svg>
           </div>
         ) : (
-          <div className={`bg-blue-600/20 backdrop-blur-sm rounded-full w-3 h-3 transition-all duration-1000 ${
-            contentState === 'visible' ? 'bg-blue-400/40' : 'bg-blue-600/20'
-          }`}></div>
+          <div
+            className={`bg-blue-600/20 backdrop-blur-sm rounded-full w-3 h-3 transition-all duration-1000 ${
+              contentState === "visible" ? "bg-blue-400/40" : "bg-blue-600/20"
+            }`}
+          ></div>
         )}
       </div>
     </div>
@@ -292,16 +332,19 @@ function EnvelopeLoading() {
       <div className="relative z-10 max-w-lg mx-auto px-6 envelope-float">
         {/* Tarjeta principal */}
         <div className="bg-gradient-to-br from-blue-50/60 via-sky-50/65 to-blue-100/60 backdrop-blur-sm backdrop-saturate-150 rounded-2xl shadow-xl shadow-blue-500/20 border border-blue-300/70 p-8 text-center envelope-glow relative overflow-hidden">
-          
           {/* Efecto shimmer */}
           <div className="absolute inset-0 envelope-shimmer rounded-2xl"></div>
-          
+
           {/* Icono de sobre decorativo con animación */}
           <div className="flex justify-center mb-6 relative z-10">
             <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center shadow-lg animate-pulse">
-              <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
-                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+              <svg
+                className="w-8 h-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
               </svg>
             </div>
           </div>
@@ -311,13 +354,13 @@ function EnvelopeLoading() {
             <h5 className="text-blue-800 font-medium text-lg tracking-wide drop-shadow-sm">
               Invitación Para:
             </h5>
-            
+
             <div className="animate-pulse bg-gradient-to-r from-blue-200/70 via-sky-200/70 to-blue-200/70 h-8 w-64 rounded-lg mx-auto shadow-md"></div>
-            
+
             <div className="text-xl text-blue-700 font-semibold animate-pulse drop-shadow-sm">
               Cargando fecha...
             </div>
-            
+
             <div className="text-blue-600 italic text-base px-2 drop-shadow-sm">
               Preparando tu invitación personalizada...
             </div>
@@ -327,7 +370,9 @@ function EnvelopeLoading() {
           <div className="mt-8 pt-6 border-t border-blue-300/60 relative z-10">
             <div className="flex items-center justify-center space-x-2 text-blue-600 drop-shadow-sm">
               <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-blue-600"></div>
-              <span className="text-sm font-medium">Cargando invitación...</span>
+              <span className="text-sm font-medium">
+                Cargando invitación...
+              </span>
             </div>
           </div>
         </div>
