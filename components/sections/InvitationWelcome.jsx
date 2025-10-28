@@ -106,7 +106,7 @@ export default function WelcomeMessage({ onContinue }) {
               style={{ 
                 textShadow: '4px 4px 8px rgba(0, 0, 0, 0.5)',
               }}
-              className="text-xl font-bold leading-relaxed text-white italic"
+              className="text-xl font-bold leading-relaxed text-white font-main-text"
             >
               {quinceMainData.welcomeSection.message}
             </p>

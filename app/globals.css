@@ -4,6 +4,64 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Animaciones personalizadas para el sobre de invitación */
+@keyframes gentle-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes soft-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.5); }
+}
+
+/* Estados del contenido central - Opción C */
+.content-hidden { 
+  opacity: 0; 
+  transform: scale(0.8) translateY(20px);
+  pointer-events: none;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-appearing { 
+  opacity: 0.8; 
+  transform: scale(0.9) translateY(10px);
+  pointer-events: auto;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-visible { 
+  opacity: 1; 
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.content-disappearing { 
+  opacity: 0.3; 
+  transform: scale(0.9) translateY(-10px);
+  pointer-events: none;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.envelope-float {
+  animation: gentle-float 3s ease-in-out infinite;
+}
+
+.envelope-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+.envelope-glow {
+  animation: soft-glow 4s ease-in-out infinite;
+}
 
 @custom-variant dark (&:is(.dark *));
 
