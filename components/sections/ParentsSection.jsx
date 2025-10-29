@@ -125,7 +125,7 @@ export default function ParentsSection() {
                     "delay-200"
                   )}
                 >
-                  <p className="text-lg italic max-w-2xl mx-auto text-cyan-900 font-bold flex flex-col space-y-4">
+                  <p className="text-lg italic max-w-2xl mx-auto text-cyan-900 flex flex-col space-y-4">
                     <span>
                       Primero agradezco a Dios por la vida, su amor y por
                       permitirme llegar a este día tan especial.
@@ -148,7 +148,7 @@ export default function ParentsSection() {
                         Mis papás
                       </h3>
                     </div>
-                    <div className="space-y-3  text-blue-900">
+                    <div className="space-y-3  text-blue-900 font-bold">
                       <div className="flex items-center justify-center space-x-2">
                         <p className="text-xl font-medium">{parents.father}</p>
                       </div>
@@ -169,7 +169,7 @@ export default function ParentsSection() {
                     "delay-200"
                   )}
                 >
-                  <p className="text-lg italic max-w-2xl mx-auto text-cyan-900 font-bold flex flex-col space-y-4">
+                  <p className="text-lg italic max-w-2xl mx-auto text-cyan-900 flex flex-col space-y-4">
                     <span>
                       Gracias por su guía, sacrificios y amor incondicional. Hoy
                       celebro mis quince años con alegría, porque Dios y
