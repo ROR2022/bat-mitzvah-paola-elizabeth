@@ -43,7 +43,7 @@ export default function HeroSection() {
     <section
       //ref={sectionRef}
       style={{
-        backgroundImage: `url('/images/marcoFlores1.jpeg')`,
+        backgroundImage: `url('/images/marcoFlores2.png')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
