@@ -172,7 +172,7 @@ export default function ParentsSection() {
                   <p className="text-lg italic max-w-2xl mx-auto text-blue-900 font-bold flex flex-col space-y-4">
                     <span>
                       Gracias por su guía, sacrificios y amor incondicional. Hoy
-                      celebro mis quince años con fe y alegría, porque Dios y
+                      celebro mis quince años con alegría, porque Dios y
                       ustedes me enseñaron a soñar. Los amo con todo mi corazón.
                     </span>
                   </p>
