@@ -1,7 +1,7 @@
 // 🏠 HeroSection - Sección principal/portada
 
 import React, { useEffect, useState } from "react";
-//import Image from 'next/image'
+import Image from 'next/image'
 import { Heart } from "lucide-react";
 import { quinceMainData } from "@/components/sections/data/main-data";
 import BackgroundCarrousel from "../../components/sections/BackgroundCarrousel";
@@ -80,6 +80,16 @@ export default function HeroSection() {
         </h1>
 
         <div className="space-y-2">
+          <div className="spotlight-image relative w-full h-96 rounded-2xl shadow-2xl overflow-hidden mx-auto">
+            <Image
+              src="/images/pao20.jpg"
+              alt="Ceremony Image"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 33vw"
+            />
+            {/* El efecto spotlight se aplica via CSS */}
+          </div>
           <div
             style={{
               textShadow: "4px 4px 8px rgba(0, 0, 0, 0.5)",
@@ -89,10 +99,6 @@ export default function HeroSection() {
             {hero.name}
           </div>
         </div>
-
-        
-
-        
       </div>
     </section>
   );
