@@ -82,7 +82,7 @@ export default function HeroSection() {
         <div className="space-y-2">
           <div className="spotlight-image relative w-full h-96 rounded-full shadow-2xl overflow-hidden mx-auto">
             <Image
-              src="/images/pao19.jpg"
+              src="/images/pao21.jpg"
               alt="Ceremony Image"
               fill
               className="object-cover"
