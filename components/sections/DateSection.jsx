@@ -62,7 +62,7 @@ export default function DateSection() {
   // Función helper para clases de animación cósmica
   const getCosmicAnimationClass = (isVisible, animationType, delay = '') => {
     // Simplificado temporalmente para debugging
-    return isVisible ? `animate-${animationType} ${delay}` : '';
+    return isVisible ? `animate-${animationType} ${delay} ` : '';
   };
       
   const basicClass="text-8xl font-bold text-indigo-500 mb-2";
@@ -168,7 +168,9 @@ export default function DateSection() {
           </div>
 
           {/* Countdown con animación */}
-          <div className={getCosmicAnimationClass(countdownVisible, 'cosmic-fade-in', 'delay-700')}>
+          <div 
+          className={getCosmicAnimationClass(countdownVisible, 'cosmic-fade-in', 'delay-700')}
+          >
             <CountdownTimer />
           </div>
         </div>

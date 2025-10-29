@@ -34,7 +34,8 @@ export default function CountdownTimer() {
   }, [])
 
   return (
-    <div className="flex justify-center items-center gap-4 py-8">
+    <div 
+    className="flex justify-center items-center gap-4 py-8 bg-slate-400 bg-opacity-50 rounded-full border-2 p-20 shadow-lg">
       <div className="text-center">
         <div className="text-4xl font-bold text-primary">{timeLeft.days}</div>
         <div className="text-sm text-muted-foreground">DÍAS</div>
