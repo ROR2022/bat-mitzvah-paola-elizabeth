@@ -15,7 +15,7 @@ export const quinceMainData = {
   },
   welcomeSection: {
     message:
-      "Con mucha alegría y emoción, te invito a celebrar mi Bat Mitzvah. Será un día muy especial, lleno de significado, amor y momentos inolvidables. ¡Espero contar con tu presencia para compartir esta gran alegría y hacer de este día algo único!",
+      "Celebremos juntos este día especial para mí, lleno de amor y momentos inolvidables. Espero contar con tu presencia, para compartir esta gran alegría.",
     backgroundImage: "/images/fondoPaola2.jpg",
   },
   event: {
