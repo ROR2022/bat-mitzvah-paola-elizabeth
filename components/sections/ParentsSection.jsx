@@ -82,10 +82,10 @@ export default function ParentsSection() {
       id="parents"
       className={`pb-0 relative overflow-hidden`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 py-10">
         <div className="max-w-4xl mx-auto">
           <div className="relative">
-            <div className="relative p-6 z-10 text-center space-y-8 py-12">
+            <div className="relative p-6 z-10 text-center space-y-2 py-12">
               <div
                 style={{
                   width: "200px",
@@ -116,7 +116,7 @@ export default function ParentsSection() {
                 />
               </div>
 
-              <div className="space-y-8">
+              <div className="space-y-2">
                 {/* Mensaje principal con animación */}
                 <div
                   className={getAnimationClass(
@@ -140,8 +140,8 @@ export default function ParentsSection() {
                     "delay-400"
                   )}`}
                 >
-                  <div className="rounded-xl p-6 ">
-                    <div className="flex items-center justify-center mb-4">
+                  <div className="rounded-xl ">
+                    <div className="flex items-center justify-center">
                       <h3
                         className={parentsVisible ? completeClass : basicClass}
                       >
