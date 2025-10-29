@@ -72,10 +72,13 @@ export default function ParentsSection() {
         position: 'relative',
       }} */
      style={{
-      //background: "url('/images/texturaAzul01.jpeg')",
-      
-
-    }}
+        backgroundImage: `url('/images/marcoFlores2.png')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        //backgroundColor: "#89ac76",
+        position: "relative",
+      }}
       id="parents" 
       className={`pb-0 relative overflow-hidden`}
     >
@@ -89,7 +92,8 @@ export default function ParentsSection() {
               
               <div 
               style={{
-                width:'200px'
+                width:'200px',
+                display:'none',
               }}
               className="rounded-full mx-auto mb-4">
               <Image
@@ -101,7 +105,9 @@ export default function ParentsSection() {
               />
               </div>
 
-              <div>
+              <div
+              style={{display:'none'}}
+              >
                 <Image
                   src="/images/pao16.jpg"
                   alt="Icono de Papás"
@@ -113,8 +119,10 @@ export default function ParentsSection() {
 
               {/* Mensaje principal con animación */}
               <div className={getAnimationClass(messageVisible, 'fade-in-up', 'delay-200')}>
-                <p className="text-lg italic max-w-2xl mx-auto text-blue-700 font-bold">
-                  {parents.message}
+                <p className="text-lg italic max-w-2xl mx-auto text-blue-900 font-bold flex flex-col space-y-4">
+                  <span>Primero agradezco a Dios por la vida, su amor y por permitirme llegar a este día tan especial.</span>
+                  <span>A mis padres: Oscar Ramírez Capultitla y Edna Areli Serrano Ortiz, gracias por su guía, sacrificios y amor incondicional. Hoy celebro mis quince años con fe y alegría, porque Dios y ustedes me enseñaron a soñar.
+                    Los amo con todo mi corazón.</span>
                 </p>
               </div>
               
@@ -150,13 +158,17 @@ export default function ParentsSection() {
                   </div>
                 </div>
 
-                <div className={getAnimationClass(messageVisible, 'fade-in-up', 'delay-200')}>
-                <p className="text-lg italic max-w-2xl mx-auto text-blue-700 font-bold">
+                <div 
+                style={{display:'none'}}
+                className={getAnimationClass(messageVisible, 'fade-in-up', 'delay-200')}>
+                <p className="text-lg italic max-w-2xl mx-auto text-blue-900 font-bold">
                   Y la Compañia de
                 </p>
               </div>
                 {/* Card de Padrinos */}
-                <div className={`${getAnimationClass(godparentsVisible, 'slide-in-right', 'delay-600')}`}>
+                <div 
+                style={{display:'none'}}
+                className={`${getAnimationClass(godparentsVisible, 'slide-in-right', 'delay-600')}`}>
                   <div className="rounded-xl p-6 ">
                     <div className="flex items-center justify-center mb-4">
                       
