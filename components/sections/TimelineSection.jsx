@@ -142,9 +142,18 @@ export default function TimelineSection() {
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-6xl mx-auto">
           
-          {/* Título principal con animación básica */}
+          {/* 
+          style={{
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+              }}
+              className="font-main-text text-4xl font-bold holographic-text"
+          Título principal con animación básica */}
           <div className="text-center mb-16">
-            <h2 className={`flex flex-col gap-3 text-5xl md:text-6xl font-bold mb-6 text-white magical-text-glow transition-all duration-1000 ${
+            <h2 
+            style={{
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
+              }}
+            className={`flex flex-col gap-3 text-5xl md:text-6xl font-bold mb-6 holographic-text transition-all duration-1000 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}>
               <span>✨</span>

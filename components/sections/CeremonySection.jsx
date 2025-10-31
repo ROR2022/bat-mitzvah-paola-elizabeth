@@ -119,7 +119,7 @@ export default function CeremonySection() {
                   </p>
                   <Button
                     onClick={() => window.open(ceremony.ubiLink, "_blank")}
-                    className="bg-yellow-600 hover:bg-yellow-700 text-white rounded-full px-8 py-3 transform hover:scale-105 transition-all duration-300"
+                    className="bg-sky-600 hover:bg-sky-700 text-white rounded-full px-8 py-3 transform hover:scale-105 transition-all duration-300"
                   >
                     <MapPin className="w-4 h-4 mr-2" />
                     Ir al mapa
@@ -161,7 +161,7 @@ export default function CeremonySection() {
                   </p>
                   <Button
                     onClick={() => window.open(party.ubiLink, "_blank")}
-                    className="bg-yellow-600 hover:bg-yellow-700 text-white rounded-full px-8 py-3 transform hover:scale-105 transition-all duration-300"
+                    className="bg-sky-600 hover:bg-sky-700 text-white rounded-full px-8 py-3 transform hover:scale-105 transition-all duration-300"
                   >
                     <MapPin className="w-4 h-4 mr-2" />
                     Ir al mapa

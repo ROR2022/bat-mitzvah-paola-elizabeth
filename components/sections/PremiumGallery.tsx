@@ -173,7 +173,7 @@ export function PremiumGallery() {
         }`}>
           <div className="divider flex items-center justify-center my-4">
             <div className="divider-icon">
-              <Camera className="w-8 h-8" style={{ color: '#e3aaaa' }} />
+              <Camera className="w-8 h-8 text-cyan-700" />
             </div>
           </div>
         </div>
@@ -237,8 +237,8 @@ export function PremiumGallery() {
             <>
               <button
                 onClick={goToPrevious}
-                className="absolute left-2 top-1/2 -translate-y-1/2 text-white p-3 rounded-full shadow-md transition-all z-10 hover:opacity-80"
-                style={{ background: 'linear-gradient(to right, #e3aaaa, #d49999)' }}
+                className="bg-sky-700 absolute left-2 top-1/2 -translate-y-1/2 text-white p-3 rounded-full shadow-md transition-all z-10 hover:opacity-80"
+                //style={{ background: 'linear-gradient(to right, #e3aaaa, #d49999)' }}
                 aria-label="Imagen anterior"
               >
                 <ChevronLeft size={24} />
@@ -246,8 +246,8 @@ export function PremiumGallery() {
 
               <button
                 onClick={goToNext}
-                className="absolute right-2 top-1/2 -translate-y-1/2 text-white p-3 rounded-full shadow-md transition-all z-10 hover:opacity-80"
-                style={{ background: 'linear-gradient(to right, #e3aaaa, #d49999)' }}
+                className="bg-sky-700 absolute right-2 top-1/2 -translate-y-1/2 text-white p-3 rounded-full shadow-md transition-all z-10 hover:opacity-80"
+                //style={{ background: 'linear-gradient(to right, #e3aaaa, #d49999)' }}
                 aria-label="Siguiente imagen"
               >
                 <ChevronRight size={24} />
@@ -262,12 +262,12 @@ export function PremiumGallery() {
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${
+                  className={` w-3 h-3 rounded-full transition-all ${
                     index === currentIndex 
-                      ? 'w-6' 
+                      ? 'w-6 bg-sky-700' 
                       : 'bg-white/70 hover:bg-white'
                   }`}
-                  style={index === currentIndex ? { backgroundColor: '#e3aaaa' } : {}}
+                  //style={index === currentIndex ? { backgroundColor: '#e3aaaa' } : {}}
                   aria-label={`Ir a imagen ${index + 1}`}
                 />
               ))}
