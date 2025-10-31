@@ -16,6 +16,17 @@ export default function TimelineSection() {
   const [windowWidth, setWindowWidth] = useState(0);
   const sectionRef = useRef(null);
 
+
+  const timelineImages = {
+    vals: "/images/vals.jpg",
+    pastel: "/images/pastel.jpg",
+    ceremonia: "/images/ceremonia.jpg",
+    fiesta: "/images/fiesta.jpg",
+    copas: "/images/copas.jpeg",
+    cena: "/images/cena.jpeg",
+  };
+  const timelineNames = ['vals', 'pastel', 'ceremonia', 'fiesta', 'copas', 'cena'];
+
   useEffect(() => {
     setWindowWidth(window.innerWidth);
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -254,9 +265,19 @@ export default function TimelineSection() {
                         {/* Efecto de brillo interno */}
                         {/* <div className="absolute inset-0 bg-gradient-to-tr from-white/30 via-transparent to-transparent rounded-2xl" /> */}
                         
-                        <span className="text-3xl relative z-10 filter " role="img" aria-label={item.id}>
+                       
+                        {timelineNames.includes(item.icon) ? (
+                          <Image
+                            src={timelineImages[item.icon]}
+                            alt={item.title}
+                            fill
+                            className="object-cover absolute inset-0 z-0 rounded-full"
+                          />
+                        )
+                        : <span className="text-3xl relative z-10 filter " role="img" aria-label={item.id}>
                           {item.icon}
                         </span>
+                      }
                       </div>
 
                       <div className="flex-1">

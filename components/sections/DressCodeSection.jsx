@@ -75,14 +75,21 @@ export default function DressCodeSection() {
           </h2>
           
           {/* Imagen - Animación con escala */}
-          <div className={`flex gap-4 justify-center items-center bg-white/30 p-4 rounded-lg shadow-lg transition-all duration-700 delay-300 ${
+          <div className={`flex gap-4 justify-center items-center transition-all duration-700 delay-300 ${
             isVisible 
               ? 'opacity-100 scale-100' 
               : 'opacity-0 scale-75'
           }`}>
-            <div>
+            <div className="flex gap-2">
               <Image
-                src={dressCode.backgroundImage}
+                src="/images/codigo1Paola.png"
+                alt="Código de Vestimenta"
+                width={100}
+                height={200}
+                className="mx-auto rounded-lg"
+              />
+              <Image
+                src="/images/codigo2Paola.png"
                 alt="Código de Vestimenta"
                 width={100}
                 height={200}
@@ -92,27 +99,20 @@ export default function DressCodeSection() {
           </div>
           
           {/* Mensaje principal - Animación desde la izquierda */}
-          <h3 className={`text-3xl font-bold text-white transition-all duration-700 delay-600 ${
+          <h3 className={`text-3xl font-bold text-sky-600 transition-all duration-700 delay-600 ${
             isVisible 
               ? 'opacity-100 translate-x-0' 
               : 'opacity-0 -translate-x-8'
           }`}>
-            {dressCode.message}
+            Formal
           </h3>
           
-          {/* Subtítulo - Animación desde la derecha */}
-          <p className={`text-2xl text-sky-500 transition-all duration-700 delay-700 ${
-            isVisible 
-              ? 'opacity-100 translate-x-0' 
-              : 'opacity-0 translate-x-8'
-          }`}>
-            {dressCode.subtitle}
-          </p>
+        
 
           <div className="flex flex-col gap-3">
-            <p className="text-2xl text-white">Colores Reservados para la Festejada</p>
+            <p className="text-2xl text-purple-500">Colores Reservados para la Festejada</p>
             <Image
-              src="/images/coloresPaola1.png"
+              src="/images/colores1Paola.jpg"
               alt="Código de Vestimenta Detalle"
               width={200}
               height={300}

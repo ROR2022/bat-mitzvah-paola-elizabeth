@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Gift } from "lucide-react";
 import { quinceMainData } from "@/components/sections/data/main-data";
+import Image from "next/image";
 
 
 export default function GiftsSection() {
@@ -79,14 +80,21 @@ export default function GiftsSection() {
               : 'opacity-0 scale-75'
           }`}>
             <div className="bg-muted/50 rounded-2xl p-8 max-w-md mx-auto">
-              <Gift className="w-16 h-16 text-secondary mx-auto mb-4" />
+              
+              <Image
+                src="/images/regalo.jpg"
+                alt="Icono de Regalos"
+                width={100}
+                height={100}
+                className="mx-auto mb-4 rounded-full"
+              />
               <h3 
                 style={{display:'none'}}
                 className="font-script text-3xl text-foreground mb-4"
               >
                 {gifts.type}
               </h3>
-              <p className="text-muted-foreground">{gifts.message}</p>
+              <p className="text-purple-600">{gifts.message}</p>
             </div>
           </div>
           {/* Cards de opciones con animaciones escalonadas */}

@@ -585,7 +585,7 @@ ${formData.mensaje ? `💌 *Mensaje especial:*\n${formData.mensaje}` : ""}
                 transitionDelay: '0ms'
               }}
             >
-              <Heart className="w-10 h-10 text-white" />
+              <Heart className="w-10 h-10 text-pink-600" />
             </div>
 
             <h3
@@ -598,11 +598,11 @@ ${formData.mensaje ? `💌 *Mensaje especial:*\n${formData.mensaje}` : ""}
                 background:
                   "linear-gradient(135deg, var(--color-aurora-lavanda), var(--color-aurora-rosa))",
                 WebkitBackgroundClip: "text",
-                //WebkitTextFillColor: "transparent",
+                //WebkitTextFillColor: "transparent", 💌
                 backgroundClip: "text",
               }}
             >
-              💌 Confirma tu Asistencia
+               Confirma tu Asistencia
             </h3>
 
             <p
@@ -857,7 +857,7 @@ ${formData.mensaje ? `💌 *Mensaje especial:*\n${formData.mensaje}` : ""}
                     <>
                       <Phone className="w-5 h-5 mr-3 group-hover:animate-bounce" />
                       <h6 className="text-purple-700 flex flex-col md:flex-row gap-2 items-center justify-center">
-                        <span>✨ Confirmar</span>
+                        <span>Confirmar</span>
                         <span>Asistencia</span>
                       </h6>
                     </>

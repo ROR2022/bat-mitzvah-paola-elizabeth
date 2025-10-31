@@ -66,7 +66,7 @@ Aurora Chávez Capultitla
     },
     party: {
       time: "15:00 hrs.",
-      venue: "Salon Michmani",
+      venue: "Salón Michmani",
       address: "Antiguo Canal Cuemanco 3, Pista Olímpica Virgilio Uribe, Xochimilco, el acceso al evento será por el estacionamiento del salón Michmani",
       type: "Recepción",
       ubiLink: "https://maps.app.goo.gl/2Tm4GjEDhi3CVc5W7",
@@ -107,42 +107,42 @@ Aurora Chávez Capultitla
         time: "10:00 hrs.",
         title: "Ceremonia Bat Mitzvah",
         description: "Ceremonia de Acción de Gracias en Comunidad Am Israel.",
-        icon: "✡️",
+        icon: "ceremonia",
       },
       {
         id: "event2",
         time: "15:00 hrs.",
         title: "Recepción",
         description: "Comida, fiesta y celebración.",
-        icon: "🥂",
+        icon: "copas",
       },
       {
         id: "event4",
         time: "15:30 hrs.",
         title: "Banquete",
         description: "Primer baile y apertura de la pista de baile.",
-        icon: "🍽️",
+        icon: "cena",
       },
       {
         id: "event5",
         time: "18:30 hrs.",
         title: "Vals",
         description: "Vals familiar y especial.",
-        icon: "💃",
+        icon: "vals",
       },
       {
         id: "event6",
         time: "19:45 hrs.",
         title: "Corte de Pastel",
         description: "Momento dulce y especial.",
-        icon: "🎂",
+        icon: "pastel",
       },
       {
         id: "event7",
         time: "20:00 hrs.",
         title: "Fiesta",
         description: "Baile y diversión hasta el final.",
-        icon: "🎉",
+        icon: "fiesta",
       }
     ],
   },
@@ -186,7 +186,7 @@ Aurora Chávez Capultitla
     title: "Lista de Regalos",
     subtitle: "Tu presencia es el mejor regalo, pero si deseas contribuir, aquí tienes algunas ideas.",
     message:
-      "Tu presencia en mi Bat Mitzvah es el mejor regalo que podría recibir. Sin embargo, si deseas contribuir con un detalle especial, lo agradeceré profundamente.",
+      "Que estés conmigo este día, es lo más importante para nosotros, el obsequio que desees darme, es de tu elección. ¡Sorpréndeme con algo especial!",
     giftsOptions: [
       
     ],
