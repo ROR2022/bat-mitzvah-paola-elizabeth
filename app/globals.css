@@ -1310,7 +1310,7 @@
 }
 
 .animate-magical-float {
-  animation: magicalFloat 8s ease-in-out;
+  animation: magicalFloat 8s ease-in-out infinite;
 }
 
 .animate-crystal-pulse {

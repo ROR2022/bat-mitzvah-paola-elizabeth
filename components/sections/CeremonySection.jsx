@@ -62,8 +62,8 @@ export default function CeremonySection() {
     return isVisible ? `animate-${animationType} ${delay}` : '';
   };
 
-  const basicClass = "text-2xl font-bold text-white";
-  const completeClass = "text-2xl font-bold text-white animate-elegant-float";
+  const basicClass = "text-2xl font-bold text-purple-800";
+  const completeClass = "text-2xl font-bold text-purple-800 animate-elegant-float";
 
   // Configurar animación de scroll
   const animationConfig = getAnimationConfig("ceremony");
@@ -110,11 +110,11 @@ export default function CeremonySection() {
                   </h4>
                   <div className="flex items-center justify-center gap-2">
                     <Clock className="w-6 h-6 text-cyan-800" />
-                    <span className="text-2xl font-medium elegant-text-glow">
+                    <span className="text-2xl font-medium text-purple-700">
                       {ceremony.time}
                     </span>
                   </div>
-                  <p className="text-sky-400">
+                  <p className="text-sky-800">
                     {ceremony.address}
                   </p>
                   <Button
@@ -152,11 +152,11 @@ export default function CeremonySection() {
                   </h4>
                   <div className="flex items-center justify-center gap-2">
                     <Clock className="w-6 h-6 text-cyan-800" />
-                    <span className="text-2xl font-medium elegant-text-glow">
+                    <span className="text-2xl font-medium text-purple-700">
                       {party.time}
                     </span>
                   </div>
-                  <p className="text-sky-400">
+                  <p className="text-sky-800">
                     {party.address}
                   </p>
                   <Button

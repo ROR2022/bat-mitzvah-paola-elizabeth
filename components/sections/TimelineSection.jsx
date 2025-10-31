@@ -176,7 +176,7 @@ export default function TimelineSection() {
                 <div className="absolute -inset-2 bg-gradient-to-br from-purple-600 via-pink-500 to-violet-600 rounded-full opacity-75 animate-spin" style={{ animationDuration: '8s' }}></div>
                 <div className="relative w-full h-full rounded-full overflow-hidden">
                   <Image
-                    src='/images/pao18.jpg'
+                    src='/images/pao22.jpg'
                     alt="Portal del tiempo"
                     fill
                     className="object-cover scale-110"
@@ -244,17 +244,17 @@ export default function TimelineSection() {
                       }} />
                     
                     <div className="flex items-center gap-6">
-                      <div className={`w-20 h-20 rounded-2xl bg-gradient-to-br ${
+                      <div className={`w-20 h-20 ${
                         isVisible 
                           ? "animate-magical-float" 
                           : ""
-                      } flex items-center justify-center shadow-2xl relative overflow-hidden`}
+                      } flex items-center justify-center relative overflow-hidden`}
                       style={{ animationDelay: `${index * 0.3 + 2}s` }}>
                         
                         {/* Efecto de brillo interno */}
-                        <div className="absolute inset-0 bg-gradient-to-tr from-white/30 via-transparent to-transparent rounded-2xl" />
+                        {/* <div className="absolute inset-0 bg-gradient-to-tr from-white/30 via-transparent to-transparent rounded-2xl" /> */}
                         
-                        <span className="text-3xl relative z-10 filter drop-shadow-lg" role="img" aria-label={item.id}>
+                        <span className="text-3xl relative z-10 filter " role="img" aria-label={item.id}>
                           {item.icon}
                         </span>
                       </div>

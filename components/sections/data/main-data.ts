@@ -67,13 +67,14 @@ Aurora Chávez Capultitla
     party: {
       time: "15:00 hrs.",
       venue: "Salon Michmani",
-      address: "Antiguo Canal Cuemanco 3, Pista Olímpica Virgilio Uribe, Xochimilco, 16034 Ciudad de México, CDMX",
+      address: "Antiguo Canal Cuemanco 3, Pista Olímpica Virgilio Uribe, Xochimilco, el acceso al evento será por el estacionamiento del salón Michmani",
       type: "Recepción",
       ubiLink: "https://maps.app.goo.gl/2Tm4GjEDhi3CVc5W7",
     },
     dressCode: "Formal - Rosa solo la quinceañera",
     restrictions: "",
   },
+  
   timeline: {
     title: "Itinerario del Evento",
     timelineImage: "/images/paola04.jpeg",
@@ -88,35 +89,61 @@ Aurora Chávez Capultitla
       "/images/pao19.jpg",
       "/images/pao20.jpg",
     ],
+    /**
+   * El programa quedaría así... 
+- Ceremonia de Bat Mitzvah 10:00 (podría poner un ícono de una estrella de David o una menorah)
+- Recepción 15:00
+(Poner un ícono de brindis)
+- banquete 15:30
+- baile 17:30
+- vals 18:30
+- pastel 19:45
+- fiesta 20:00
+
+   */
     events: [
       {
         id: "event1",
         time: "10:00 hrs.",
         title: "Ceremonia Bat Mitzvah",
         description: "Ceremonia de Acción de Gracias en Comunidad Am Israel.",
-        icon: "⛪",
+        icon: "✡️",
       },
       {
         id: "event2",
         time: "15:00 hrs.",
         title: "Recepción",
         description: "Comida, fiesta y celebración.",
-        icon: "🎉",
+        icon: "🥂",
       },
       {
         id: "event4",
-        time: "18:30 hrs.",
-        title: "Vals",
+        time: "15:30 hrs.",
+        title: "Banquete",
         description: "Primer baile y apertura de la pista de baile.",
-        icon: "💃",
+        icon: "🍽️",
       },
       {
         id: "event5",
+        time: "18:30 hrs.",
+        title: "Vals",
+        description: "Vals familiar y especial.",
+        icon: "💃",
+      },
+      {
+        id: "event6",
+        time: "19:45 hrs.",
+        title: "Corte de Pastel",
+        description: "Momento dulce y especial.",
+        icon: "🎂",
+      },
+      {
+        id: "event7",
         time: "20:00 hrs.",
         title: "Fiesta",
-        description: "Celebracion y Fiesta.",
-        icon: "🍰",
-      },
+        description: "Baile y diversión hasta el final.",
+        icon: "🎉",
+      }
     ],
   },
   dressCode:{
