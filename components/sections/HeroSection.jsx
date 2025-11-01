@@ -16,6 +16,7 @@ export default function HeroSection() {
   const { backgroundCarrouselImages } = hero;
   const [scrollPosition, setScrollPosition] = useState(window.scrollY);
   const [isVisible, setIsVisible] = useState(false);
+  const [sparklePositions, setSparklePositions] = useState([]);
 
   const basicClass = "font-script text-4xl text-sky-700 mb-4 italic";
   const completeClass =
@@ -26,6 +27,7 @@ export default function HeroSection() {
       //console.log('Scroll position:', window.scrollY);
       setScrollPosition(window.scrollY);
     };
+    setSparklePositions(generateSparkles());
 
     window.addEventListener("scroll", handleScroll);
     return () => {
@@ -38,6 +40,21 @@ export default function HeroSection() {
       setIsVisible(true);
     }
   }, [scrollPosition]);
+
+  // Generar partículas sparkle
+  const generateSparkles = () => {
+    const sparkles = [];
+    for (let i = 0; i < 40; i++) {
+      sparkles.push({
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        delay: Math.random() * 4,
+        size: Math.random() * 6 + 4,
+      });
+    }
+    return sparkles;
+  };
 
   return (
     <section
@@ -54,6 +71,38 @@ export default function HeroSection() {
       className="min-h-screen flex flex-col justify-center items-center relative"
     >
       {/* <BackgroundCarrousel images={backgroundCarrouselImages}/> */}
+
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {[...Array(10)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute welcome-float-particle"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${i * 1000}ms`,
+                fontSize: `${12 + Math.random() * 8}px`,
+                color: 'rgba(255, 255, 255, 0.6)'
+              }}
+            >
+              💝
+            </div>
+          ))}
+        </div>
+
+       {/* Partículas sparkle mágicas */}
+      {sparklePositions.map((sparkle) => (
+        <div
+          key={sparkle.id}
+          className="sparkle-particle animate-sparkle-trail absolute z-10 pointer-events-none"
+          style={{
+            left: `${sparkle.x}%`,
+            top: `${sparkle.y}%`,
+            animationDelay: `${sparkle.delay}s`,
+            width: `${sparkle.size}px`,
+            height: `${sparkle.size}px`,
+          }}
+        />
+      ))}
 
       {/* Contenido principal - Usar solo animación CSS, no scroll-based */}
       <div

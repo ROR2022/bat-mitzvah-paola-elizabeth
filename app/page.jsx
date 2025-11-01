@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
 
 //import Navigation from "../components/navigation"
@@ -27,6 +27,13 @@ import VideoElement from "@/components/sections/VideoElement"
 export default function WeddingInvitation() {
   const [isOpenInvitation, setIsOpenInvitation] = useState(false);
   const [isWelcomeMessageVisible, setIsWelcomeMessageVisible] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    if(typeof window !== 'undefined') {
+      setIsMounted(true);
+    }
+  }, []);
 
   const handleOpenInvitation = () => {
     setIsOpenInvitation(true);
@@ -37,6 +44,10 @@ export default function WeddingInvitation() {
     setIsWelcomeMessageVisible(false);
   }; 
 
+  if (!isMounted) {
+    return null; // Evita el renderizado en el servidor
+  }
+
   if(!isOpenInvitation) {
     return (
       <InvitationEnvelope onOpen={handleOpenInvitation} />
@@ -46,6 +57,8 @@ export default function WeddingInvitation() {
    if (isWelcomeMessageVisible) {
     return <WelcomeMessage onContinue={handleContinue} />
   } 
+
+
 
   return (
     <div 

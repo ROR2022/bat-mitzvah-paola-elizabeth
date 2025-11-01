@@ -82,6 +82,23 @@ export default function ParentsSection() {
       id="parents"
       className={`pb-0 relative overflow-hidden`}
     >
+
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {[...Array(10)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute welcome-float-particle"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${i * 1000}ms`,
+                fontSize: `${12 + Math.random() * 8}px`,
+                color: 'rgba(255, 255, 255, 0.6)'
+              }}
+            >
+              🎀
+            </div>
+          ))}
+        </div>
       <div className="container mx-auto px-4 py-10">
         <div className="max-w-4xl mx-auto">
           <div className="relative">

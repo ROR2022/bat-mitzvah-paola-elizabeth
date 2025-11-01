@@ -108,10 +108,31 @@ export function PremiumGallery() {
         position: 'relative',
       }}
     className="py-16 px-4">
+
+
+
       <div
         ref={ref}
         className="p-4 rounded-2xl max-w-4xl mx-auto text-center"
       >
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {[...Array(10)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute welcome-float-particle"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${i * 1000}ms`,
+                fontSize: `${12 + Math.random() * 8}px`,
+                color: 'rgba(255, 255, 255, 0.6)'
+              }}
+            >
+              📸
+            </div>
+          ))}
+        </div>
+
+
         {/* Header premium con animaciones escalonadas */}
         <div className="mb-12">
           {/* Badge con animación */}

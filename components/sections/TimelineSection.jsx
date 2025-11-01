@@ -97,6 +97,23 @@ export default function TimelineSection() {
       className="py-20 min-h-screen relative overflow-hidden"
     >
       {/* <BackgroundCarrousel images={timeline.images}/> */}
+
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {[...Array(10)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute welcome-float-particle"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${i * 1000}ms`,
+                fontSize: `${12 + Math.random() * 8}px`,
+                color: 'rgba(255, 255, 255, 0.6)'
+              }}
+            >
+              ✨
+            </div>
+          ))}
+        </div>
       
       {/* Partículas sparkle mágicas */}
       {sparklePositions.map((sparkle) => (
@@ -257,12 +274,12 @@ export default function TimelineSection() {
                     <div className="flex items-center gap-6">
                       <div className={`w-20 h-20 ${
                         isVisible 
-                          ? "animate-magical-float" 
+                          ? "" 
                           : ""
                       } flex items-center justify-center relative overflow-hidden`}
                       style={{ animationDelay: `${index * 0.3 + 2}s` }}>
                         
-                        {/* Efecto de brillo interno */}
+                        {/* Efecto de brillo interno  animate-magical-float */}
                         {/* <div className="absolute inset-0 bg-gradient-to-tr from-white/30 via-transparent to-transparent rounded-2xl" /> */}
                         
                        

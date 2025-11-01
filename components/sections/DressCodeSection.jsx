@@ -56,6 +56,23 @@ export default function DressCodeSection() {
         position: "relative",
       }}
     >
+
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {[...Array(10)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute welcome-float-particle"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${i * 1000}ms`,
+                fontSize: `${12 + Math.random() * 8}px`,
+                color: 'rgba(255, 255, 255, 0.6)'
+              }}
+            >
+              👗
+            </div>
+          ))}
+        </div>
      
       <div
         style={{
